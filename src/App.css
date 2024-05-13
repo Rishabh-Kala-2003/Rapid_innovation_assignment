@@ -1,38 +1,329 @@
-.App {
+/* src/App.css */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Define styles for light theme */
+.app.light {
+  /* Define light theme colors */
+  --background-color: #fff;
+  --text-color: #333;
+}
+
+/* Define styles for dark theme */
+.app.dark {
+  /* Define dark theme colors */
+  --background-color: #333;
+  --text-color: #fff;
+}
+
+/* Apply common styles */
+.app {
+  /* Set background color */
+  background-color: var(--background-color);
+  /* Set text color */
+  color: var(--text-color);
+}
+
+/* src/components/Navbar.css */
+.navbar {
+  background-color: #fff; /* Light theme background color */
+  color: #333; /* Light theme text color */
+  /* Add other styles as needed */
+  padding: 20px; /* Increase padding */
+  font-size: 20px; /* Increase font size */
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.company-logo {
+  font-weight: bold;
+  margin-left: auto; /* Align Rapid Innovation logo to the right */
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-left: 30px; /* Increase margin between items */
+}
+
+.navbar-link {
+  color: #333; /* Dark text color */
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: #555; /* Darker color on hover */
+}
+
+/* Align Toggle Theme button to the left */
+.toggle-theme-button {
+  margin-left: 20px;
+}
+
+/* src/components/Home.css */
+
+.background-image {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 93.8vh; /* Full viewport height */
+  background-color: var(--background-color); /* Use theme-based background color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content-container {
+  display: flex;
+  flex-direction: column; /* Change to column layout for smaller screens */
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.quote, .subheading {
+  color: var(--text-color); /* Use theme-based text color */
+}
+
+.logo-container {
+  margin-top: 20px; /* Add margin to the top for separation */
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.get-started-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-started-button:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 5%;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  .quote {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .subheading {
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+
+  .logo-container {
+    margin-top: 10px;
+  }
+
+  .get-started-button {
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* src/components/TaskPage.css */
+
+.task-page-container {
+  max-width: 800px; /* Increase the max-width for a bigger TaskPage */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.task-page {
+  width: 100vw; /* Full viewport width */
+  height: 93.8vh; /* Full viewport height */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in element's total width and height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.task-input {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-input input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+}
+
+.task-list li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-list li button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* src/components/ContactForm.css */
+
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.error-message {
+  color: red;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+/* src/components/Navbar.css */
+
+/* Navbar styles for light theme */
+.navbar.light {
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text color */
+}
+
+/* Navbar styles for dark theme */
+.navbar.dark {
+  background-color: #333; /* Dark background */
+  color: #fff; /* Light text color */
+}
+
+.navbar {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center; /* Center items vertically */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.company-logo {
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-left: 20px;
+}
+
+.navbar-link {
+  color: inherit; /* Inherit text color from parent */
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: #555; /* Darker color on hover */
 }
