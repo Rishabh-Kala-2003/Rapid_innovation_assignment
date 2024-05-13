@@ -35,15 +35,14 @@ body {
 }
 
 /* src/components/Navbar.css */
+/* Navbar styles */
 .navbar {
-  background-color: #fff; /* Light theme background color */
-  color: #333; /* Light theme text color */
-  /* Add other styles as needed */
-  padding: 20px; /* Increase padding */
-  font-size: 20px; /* Increase font size */
+  padding: 10px;
   display: flex;
-  justify-content: space-between; /* Distribute items evenly */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
   align-items: center; /* Center items vertically */
+  background-color: var(--navbar-bg-color); /* Use theme-based background color */
+  color: var(--navbar-text-color); /* Use theme-based text color */
 }
 
 .navbar-left {
@@ -53,7 +52,6 @@ body {
 
 .company-logo {
   font-weight: bold;
-  margin-left: auto; /* Align Rapid Innovation logo to the right */
 }
 
 .navbar-right {
@@ -68,11 +66,11 @@ body {
 }
 
 .navbar-item {
-  margin-left: 30px; /* Increase margin between items */
+  margin-left: 20px;
 }
 
 .navbar-link {
-  color: #333; /* Dark text color */
+  color: inherit; /* Inherit text color from parent */
   text-decoration: none;
 }
 
@@ -80,13 +78,7 @@ body {
   color: #555; /* Darker color on hover */
 }
 
-/* Align Toggle Theme button to the left */
-.toggle-theme-button {
-  margin-left: 20px;
-}
-
 /* src/components/Home.css */
-
 .background-image {
   position: relative;
   width: 100vw; /* Full viewport width */
@@ -273,57 +265,4 @@ textarea {
 
 .submit-button:hover {
   background-color: #0056b3;
-}
-/* src/components/Navbar.css */
-
-/* Navbar styles for light theme */
-.navbar.light {
-  background-color: #fff; /* White background */
-  color: #333; /* Dark text color */
-}
-
-/* Navbar styles for dark theme */
-.navbar.dark {
-  background-color: #333; /* Dark background */
-  color: #fff; /* Light text color */
-}
-
-.navbar {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between; /* Distribute items evenly along the main axis */
-  align-items: center; /* Center items vertically */
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center; /* Center items vertically */
-}
-
-.company-logo {
-  font-weight: bold;
-}
-
-.navbar-right {
-  display: flex;
-}
-
-.navbar-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-item {
-  margin-left: 20px;
-}
-
-.navbar-link {
-  color: inherit; /* Inherit text color from parent */
-  text-decoration: none;
-}
-
-.navbar-link:hover {
-  color: #555; /* Darker color on hover */
 }
